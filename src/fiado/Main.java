@@ -6,33 +6,21 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		//conjunto finito(no caso 10) e ordenado (zero a 9 posições)
-		int[] fiados = new int[10];
-//		fiados [0] = 12;
-//		fiados [3] = 87;
-		//command+I para corrigir indentação
-		
+		Consumidor consumidor = new Consumidor();
+		consumidor.fiados = new int[10];
 		
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Informe o nome do cliente: ");
-		String nome = scanner.nextLine();
+		consumidor.nome = scanner.nextLine();
 		System.out.print("Informe o valor da compra: ");
-		fiados [0] = Integer.valueOf(scanner.nextLine());
+		consumidor.fiados [0] = Integer.valueOf(scanner.nextLine());
 		
-		//criar variavel do total, recebendo o retorno do metodo criado
-		int total = somaFor(fiados);
+		int total = somaFor(consumidor.fiados);
 		
-		//condicionais
-		
-		while (total < 0) {
-			System.out.println("Valor negativo encontrado. Repita a operação.");
-			System.out.print("Informe o valor da compra: ");
-			fiados [0]= Integer.valueOf(scanner.nextLine());
-		}
 		if (total > 100) {
-			System.out.println("Cliente " + nome + " gastou " + total + " reais e ganhou brinde");
+			System.out.println("Cliente " + consumidor.nome + " gastou " + total + " reais e ganhou brinde");
 		} else {
-			System.out.println("Cliente " + nome + " gastou " + total + " reais.");
+			System.out.println("Cliente " + consumidor.nome + " gastou " + total + " reais.");
 		}
 		
 		
