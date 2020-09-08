@@ -38,7 +38,7 @@ public class Consumidor {
 		return total;
 		}
 	
-	public String getTelefone() {
+	public String getTelefone( ) {
 		return this.telefone;
 	}
 	
